@@ -1,5 +1,7 @@
 import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
 import { getSiteRoot } from '../../scripts/scripts.js';
+import { loadFragment } from '../fragment/fragment.js';
+
 /**
  * collapses all open nav sections
  * @param {Element} sections The container element
@@ -20,6 +22,7 @@ export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/nav');
+  const fragment = await loadFragment(navPath);
 
   let navURL = `${getSiteRoot(5)}${navPath}.plain.html`;
   let updatedNavUrl = navURL.replace(/about-us\/|faqs\/|magazine\/.+\/|adventures\/.+\//g, "/");
@@ -30,6 +33,7 @@ export default async function decorate(block) {
 
     // decorate nav DOM
     const nav = document.createElement('nav');
+    while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
     nav.innerHTML = html;
     decorateIcons(nav);
 
