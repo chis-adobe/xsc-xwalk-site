@@ -1,4 +1,8 @@
 mappings:
- - /content/xsc-xwalk-site/:/
- - /content/xsc-xwalk-site/metadata.json:/metadata.json
- - /content/xsc-xwalk-site/redirects.json:/redirects.json
+ #- /content/xsc-xwalk-site/:/
+ #- /content/xsc-xwalk-site/metadata.json:/metadata.json
+ #- /content/xsc-xwalk-site/redirects.json:/redirects.json
+  /:
+    url: https://author-p130746-e1298459.adobeaemcloud.com/bin/franklin.delivery/deckreyes/xsc-xwalk-site/main
+    type: markup
+    suffix: ".html?wcmmode=disabled"
