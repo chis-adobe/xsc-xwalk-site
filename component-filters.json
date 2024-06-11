@@ -16,7 +16,8 @@
         "text",
         "image",
         "button",
-        "title"
+        "title",
+        "dynamic-media"
       ]
     },
     {
@@ -34,7 +35,8 @@
         "featured-article",
         "blockquote",
         "article-details",
-        "content-fragment"
+        "content-fragment",
+        "dynamic-media"
       ]
     },
     {
