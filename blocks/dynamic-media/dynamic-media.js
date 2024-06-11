@@ -46,6 +46,6 @@ export default function decorate(block) {
   imageEl.setAttribute("src", "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
   imageEl.setAttribute("data-mode", "smartcrop");
 
-  
   s7responsiveImage(imageEl);
+  dmUrlEl.remove();
 }
